@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KENDRIA AI</title>
+
+<style>
+body {
+  background: #101827;
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  color: #38bdf8;
+}
+
+#chat {
+  background: #1e293b;
+  padding: 15px;
+  border-radius: 12px;
+  min-height: 200px;
+  margin-bottom: 15px;
+}
+
+input {
+  padding: 12px;
+  width: 65%;
+  border-radius: 8px;
+  border: none;
+}
+
+button {
+  padding: 12px;
+  background: #38bdf8;
+  border: none;
+  border-radius: 8px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>🤖 KENDRIA AI</h1>
+<p>Ton assistant intelligent</p>
+
+<div id="chat">
+  <p>Bienvenue ! Pose-moi une question.</p>
+</div>
+
+<input id="question" placeholder="Écris ton message...">
+<button onclick="repondre()">Envoyer</button>
+
+<script>
+function repondre() {
+  let q = document.getElementById("question").value;
+  let chat = document.getElementById("chat");
+
+  if (q.trim() === "") return;
+
+  chat.innerHTML += "<p><b>Toi :</b> " + q + "</p>";
+
+  let reponse = "Je suis KENDRIA AI ! Tu viens d'apprendre à créer une interface avec JavaScript.";
+
+  chat.innerHTML += "<p><b>KENDRIA :</b> " + reponse + "</p>";
+
+  document.getElementById("question").value = "";
+}
+</script>
+
+</body>
+</html>
